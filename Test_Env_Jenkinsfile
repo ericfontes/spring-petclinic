@@ -21,7 +21,7 @@ pipeline {
 	  stage('Build') {
 
 	    steps {
-	      sh 'winpty docker login'
+	      sh 'docker login ericfontes -u root -p "${Password}"'
 	      sh 'docker compose build'
 	      sh 'docker compose push'
 	       }
