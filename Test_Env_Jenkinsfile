@@ -21,7 +21,7 @@ pipeline {
 	  stage('Build') {
 
 	    steps {
-	      sh 'docker login'
+	      sh 'winpty docker login'
 	      sh 'docker compose build'
 	      sh 'docker compose push'
 	       }
