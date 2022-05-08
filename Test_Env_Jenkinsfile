@@ -1,9 +1,15 @@
 pipeline {
 
 	agent any
-	
+
+	environment {
+	DOCKER_HUB_CREDS = credentials('ericfontes-docker-hub') 
+	}
+		
 	stages {
+
 	  stage('Tooling versions') {
+
 	    steps{
 	      sh '''
 	        docker --version
@@ -11,5 +17,12 @@ pipeline {
 		'''
 		}
           }
+
+	  stage('Build') {
+
+	    steps {
+	      sh 'docker login ericfontes:5050 -u root -p password'
+	       }
+	  }
      }
 }
