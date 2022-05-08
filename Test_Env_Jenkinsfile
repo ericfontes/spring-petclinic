@@ -23,7 +23,7 @@ pipeline {
 	    steps {
 	      sh 'docker context use default'
 	      sh 'docker compose build'
-	      sh 'docker compose push'
+	      sh 'sudo docker compose push'
 	       }
 	  }
      }
