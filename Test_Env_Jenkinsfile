@@ -21,7 +21,7 @@ pipeline {
 	  stage('Build') {
 
 	    steps {
-	      sh 'docker login ericfontes:5050 -u root -p --password'
+	      sh 'docker context use default'
 	       }
 	  }
      }
