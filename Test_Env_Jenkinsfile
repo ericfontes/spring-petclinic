@@ -21,7 +21,7 @@ pipeline {
 	  stage('Build') {
 
 	    steps {
-	      sh 'docker login ericfontes -u root -p "${Password}"'
+	      sh 'docker login DOCKER_HUB_CREDS.Username -u root -p DOCKER_HUB_CREDS.Password'
 	      sh 'docker compose build'
 	      sh 'docker compose push'
 	       }
