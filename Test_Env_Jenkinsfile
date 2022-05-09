@@ -28,7 +28,7 @@ pipeline {
 	       }
 	  }
 
-	 stage('SonarCloud'){
+	 steps('SonarCloud'){
 
 	   withSonarQubeEnv('sonarcloud') {
              sh "./mvnw org.jacoco:jacoco-maven-plugin:prepare-agent verify \
