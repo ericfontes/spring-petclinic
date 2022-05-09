@@ -28,12 +28,13 @@ pipeline {
 	       }
 	  }
 
-	stage('SonarCloud'){
-	withSonarQubeEnv('sonarcloud') {
-    sh "./mvnw org.jacoco:jacoco-maven-plugin:prepare-agent verify \
-        sonar:sonar -Dsonar.branch.name=${env.BRANCH_NAME}"
-	    }
-	}
+	 stage('SonarCloud'){
+
+	   withSonarQubeEnv('sonarcloud') {
+             sh "./mvnw org.jacoco:jacoco-maven-plugin:prepare-agent verify \
+             sonar:sonar -Dsonar.branch.name=${env.BRANCH_NAME}"
+	     }
+	 }
 
      }
-}
+ }
