@@ -28,6 +28,15 @@ pipeline {
 	       }
 	  }
 
+	  stage('Deploy') {
+	    
+	    steps {
+	      sh 'docker context use default'
+	      sh 'docker compose up'
+	      sh 'docker compose ps --format json'
+	      }
+	  }
+/**
 	 stage('SonarCloud'){
 	   steps{
 	     withSonarQubeEnv('sonarcloud') {
@@ -36,6 +45,6 @@ pipeline {
                 }
 	     }
 	 }
-
+**/
      }
  }
